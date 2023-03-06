@@ -1,1 +1,354 @@
+@backgroundColor: #003e08;
+@navColor: #007810;
+@navWidth: 100%;
+@linksColor: white;
+@linksFont: 'Tilt Warp', cursive;
+@linksVisited: #bcbcbc;
+@hamburgerIconColor: #04c240;
+@blue: #51b5ff;
+
+
+html {
+    background-color: @backgroundColor;
+}
+
+
+nav {
+    width: @navWidth;
+    height: 60px;
+    background-color: @navColor;
+    display: flex;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+}
+
+
+/* LINKS */
+
+a {
+    color: @linksColor;
+    -webkit-text-stroke: 2px rgb(0, 72, 117);
+    text-decoration: none;
+    font-size: 29px;
+    margin-right: 20px;
+    font-family: @linksFont;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+a:visited {
+    color: @linksVisited;
+}
+
+#links {
+    margin-left: 30px;
+}
+
+#hamburger {
+    width: 60px;
+    height: 60px;
+    background-color: @hamburgerIconColor;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+#hamburger:hover {
+    background-color: #049231;
+}
+
+#hamburger:active {
+    background-color: #036b24;
+}
+
+.bar {
+    width: 50px;
+    border-radius: 15px;
+    height: 7px;
+    background-color: black;
+}
+
+.bar:nth-child(2) {
+    background-color: rgb(52, 52, 52);
+}
+
+#verticalNav {
+    display: none;
+}
+
+
+/* HOME PAGE */
+#home {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+#homeCard {
+    width: 800px;
+    height: 300px;
+    background-color: #1a6925;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 20px groove #01b419;
+}
+
+div > p {
+    color: white;
+}
+
+div p {
+    color: gray;
+}
+
+.title {
+    -webkit-text-stroke: 1px rgb(0, 200, 255);
+    font-size: 40px;
+    font-family: 'Shantell Sans', cursive;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p.title {
+    color:rgb(13, 145, 35);
+}
+
+#answer {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+#text {
+    width: 500px;
+}
+
+
+/* SIMILE PAGE */
+#simile {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#videoHolder {
+    width: 500px;
+    height: 375px;
+    border: 3px solid @blue;
+}
+
+#poem {
+    width: 500px;
+    height: 375px;
+    border: 3px solid @blue;
+    font-family: 'Shantell Sans', cursive;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 90px;
+    height: 50px;
+    background-color: @blue;
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 8px 8px black;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: 'Tilt Warp', cursive;
+}
+
+button:hover {
+    background-color: #377bae;
+}
+
+button:active {
+    background-color: #265579;
+}
+
+#buttonHolder {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+
+/* MEDIA QUERIES  */
+@media only screen and (max-width: 1065px) {
+   #simile {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 1000px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+   }
+}
+
+@media only screen and (max-width: 870px) {
+    #homeCard {
+        width: 600px;
+    }
+
+    #text {
+        width: 350px;
+    }
+
+    a {
+        font-size: 20px;
+        -webkit-text-stroke: 1.5px rgb(0, 72, 117);
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    #homeCard {
+        width: 480px;
+    }
+
+    .title {
+        font-size: 25px;
+        -webkit-text-stroke: 0.7px rgb(0, 200, 255);
+    }
+
+    #answer {
+        font-size: 20px;
+    }
+
+    #text {
+        width: 200px;
+    }
+
+    a {
+        font-size: 30px;
+        -webkit-text-stroke: 2px rgb(0, 72, 117);
+    }
+
+    #hamburger {
+        display: block;
+        display: flex;
+    }
+
+    #links {
+        display: none;
+    }
+
+    #links2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 400px;
+        text-align: center;
+    }
+
+    #close {
+        color: white;
+        cursor: pointer;
+    }
+
+    #close:hover {
+        color: rgb(190, 190, 190);
+    }
+
+    #close:active {
+        color: rgb(138, 138, 138);
+    }
+
+
+    #verticalNav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #0178b4;
+        height: 100%;
+        width: 200px;
+        margin-left: -200px;
+        align-items: center;
+        z-index: 99;
+        transition-duration: 0.5s;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    #simile {
+     flex-direction: column;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     height: 1000px;
+     margin-top: 80px;
+     padding-bottom: 80px;
+    }
+
+    #videoHolder {
+        width: 400px;
+    }
+
+    #poem {
+        width: 400px;
+    }
+
+    iframe {
+        width: 400px;
+    }
+ }
+
+@media only screen and (max-width: 550px) {
+    #homeCard {
+        width: 430px;
+    }
+
+    .title {
+        font-size: 25px;
+        -webkit-text-stroke: 0.7px rgb(0, 200, 255);
+    }
+
+    #answer {
+        font-size: 20px;
+    }
+
+    #text {
+        width: 200px;
+    }
+
+    a {
+        font-size: 27px;
+        -webkit-text-stroke: 1.7px rgb(0, 72, 117);
+    }
+
+    button {
+        width: 70px;
+        font-size: 17px;
+    }
+}
+
 
