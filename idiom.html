@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neely Figurative Speech App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shantell+Sans:wght@300&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/android-chrome-512x512.png" type="image/x-icon">
+
+    <script>
+        function closeNav() {
+            document.getElementById("verticalNav").style.left = "0px";
+        }
+
+        function openNav() {
+            document.getElementById("verticalNav").style.left = "200px";
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <div id="hamburger" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div id="verticalNav">
+            <div id="links2">
+                <i id="close" class="fa-regular fa-circle-xmark fa-2x" onclick="closeNav()"></i>
+                <a href="index.html">Home</a>
+                <a href="simile.html">Simile</a>
+                <a href="metaphor.html">Metaphor</a>
+                <a href="hyperbole.html">Hyperbole</a>
+                <a href="alliteration.html">Alliteration</a>
+                <a href="idiom.html">Idiom</a>
+            </div>
+        </div>
+        <div id="links">
+            <a href="index.html">Home</a>
+            <a href="simile.html">Simile</a>
+            <a href="metaphor.html">Metaphor</a>
+            <a href="hyperbole.html">Hyperbole</a>
+            <a href="alliteration.html">Alliteration</a>
+            <a href="idiom.html">Idiom</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div id="homeCard">
+            <div>
+                <img src="assets/Erin Neely.png" alt="Neely">
+            </div>
+            <div id="text">
+                <p id="question">What is figurative language?</p>
+                <p id="answer">Figurative language is a way to refer to something with meaning, but not literally true.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

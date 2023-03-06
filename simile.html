@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neely Figurative Speech App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shantell+Sans:wght@300&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/android-chrome-512x512.png" type="image/x-icon">
+
+    <script>
+        function closeNav() {
+            document.getElementById("verticalNav").style.left = "0px";
+        }
+
+        function openNav() {
+            document.getElementById("verticalNav").style.left = "200px";
+        }
+
+        const allPoems = [
+            "Twinkle twinkle",
+            "test2",
+            "test3",
+        ];
+
+        const showInfo = () => {
+            console.log(window.event.target.value);
+            let refToPoemArea = document.querySelector("#poem");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            refToPoemArea.innerHTML = allPoems[index];
+        };
+
+        const videos = [
+            {
+                title: "Simile",
+                src: "https://www.youtube.com/embed/pm6zt24w0qU",
+            },
+            {
+                title: "Simile #2",
+                src: "https://www.youtube.com/embed/Syv4x-09luY",
+            },
+        ];
+
+        const showVideo = () => {
+            console.log(window.event.target.value);
+            let videoiframe = document.querySelector("#video");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            videoiframe.title = videos[index].title;
+            videoiframe.src = videos[index].src;
+        };
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <div id="hamburger" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div id="verticalNav">
+            <div id="links2">
+                <i id="close" class="fa-regular fa-circle-xmark fa-2x" onclick="closeNav()"></i>
+                <a href="index.html">Home</a>
+                <a href="simile.html">Simile</a>
+                <a href="metaphor.html">Metaphor</a>
+                <a href="hyperbole.html">Hyperbole</a>
+                <a href="alliteration.html">Alliteration</a>
+                <a href="idiom.html">Idiom</a>
+            </div>
+        </div>
+        <div id="links">
+            <a href="index.html">Home</a>
+            <a href="simile.html">Simile</a>
+            <a href="metaphor.html">Metaphor</a>
+            <a href="hyperbole.html">Hyperbole</a>
+            <a href="alliteration.html">Alliteration</a>
+            <a href="idiom.html">Idiom</a>
+        </div>
+    </nav>
+
+    <section id="simile">
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showVideo()" value="1">
+                    Video #1
+                </button>
+                <button onclick="showVideo()" value="2">
+                    Video #2
+                </button>
+            </div>
+            <div id="videoHolder">
+                <iframe id="video" width="500px" height="375px" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showInfo()" value="1">
+                    Poem #1
+                </button>
+                <button onclick="showInfo()" value="2">
+                    Poem #2
+                </button>
+            </div>
+            <div id="poem">
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
