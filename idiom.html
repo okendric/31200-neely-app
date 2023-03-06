@@ -23,6 +23,48 @@
         function openNav() {
             document.getElementById("verticalNav").style.left = "200px";
         }
+
+        const allPoems = [
+            "I've got something to tell you<br>I think it would be best<br>Although you don't want to hear it<br>I need it get it off my chest<br><br>I bought a car from a man I knew<br>(whose real name nobody knows)<br>He charged me £2000 for a really old car<br>I really paid through the nose.<br><br>You had to hand it to him<br>He was a popular business guy<br>Drove a very hard bargain<br>And had a finger in every pie.<br><br>I thought I was getting a great deal<br>I've been making good headway on maths skills<br>But it turned out to be a real rip-off<br>And it's left me with nothing but bills<br>And just to make it worse, I crashed<br>The embarrassment hurts me still<br>It cost £600 to repair<br>So I had to foot the bill.<br><br>Now I don't know what to do<br>And I'm hoping for some advice<br>Or maybe some help with the cost<br>Although the car wasn't worth the price.",
+
+            "It's time to break out<br>of your shell<br>and show the world<br>who you really are<br>and what you're<br>really made of!!!<br><br>Live your dreams!!",
+
+            "From the bottom<br>of your heart",
+
+            "Talked my head off<br>Worked my tail off<br>Cried my eyes out<br>Walked my feet off<br>Sang my heart out<br>So you see,<br>There's really not much left of me.<br><br>-Shel Silverstein",
+
+            "I asked for a hot dog<br>With everything on it,<br>And that was my big mistake<br>'Cause it came with a parrot,<br>A bee in a bonnet,<br>A wristwatch, a wrench, and a rake.<br>It came with a goldfish,<br>A flag, and a fiddle,<br>A frog, and a front porch swing,<br>And a mouse in a mask--<br>That's the last time I ask<br>For a hot dog with everything."
+        ];
+
+        const showInfo = () => {
+            console.log(window.event.target.value);
+            let refToPoemArea = document.querySelector("#poem");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            refToPoemArea.innerHTML = allPoems[index];
+        };
+
+        const videos = [
+            {
+                title: "Idiom #1",
+                src: "https://www.youtube.com/embed/pnjTifihP6Y",
+            },
+            {
+                title: "Idiom #2",
+                src: "https://www.youtube.com/embed/Dv7eWoftF94",
+            },
+        ];
+
+        const showVideo = () => {
+            console.log(window.event.target.value);
+            let videoiframe = document.querySelector("#video");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            videoiframe.title = videos[index].title;
+            videoiframe.src = videos[index].src;
+        };
     </script>
 </head>
 
@@ -56,17 +98,45 @@
         </div>
     </nav>
 
-    <section id="home">
-        <div id="homeCard">
-            <div>
-                <img src="assets/Erin Neely.png" alt="Neely">
+    <section id="simile">
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showVideo()" value="1">
+                    Video #1
+                </button>
+                <button onclick="showVideo()" value="2">
+                    Video #2
+                </button>
             </div>
-            <div id="text">
-                <p id="question">What is figurative language?</p>
-                <p id="answer">Figurative language is a way to refer to something with meaning, but not literally true.
-                </p>
+            <div id="videoHolder">
+                <iframe id="video" width="500px" height="375px" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
+
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showInfo()" value="1">
+                    Poem #1
+                </button>
+                <button onclick="showInfo()" value="2">
+                    Poem #2
+                </button>
+                <button onclick="showInfo()" value="3">
+                    Poem #3
+                </button>
+                <button onclick="showInfo()" value="4">
+                    Poem #4
+                </button>
+                <button onclick="showInfo()" value="5">
+                    Poem #5
+                </button>
+            </div>
+            <div id="poem">
+            </div>
+        </div>
+
     </section>
 
 </body>

@@ -23,6 +23,42 @@
         function openNav() {
             document.getElementById("verticalNav").style.left = "200px";
         }
+
+        const allPoems = [
+            "I thought it rather strange today,<br>When visiting the zoo,<br>To find the creatures living there,<br>Are just like me and you.<br>So wild and acrobatic,<br>The monkeys in their cage,<br>Delight in swinging high and low,<br>Performers on a stage.<br>Dignified and tall, the penguins on the ice,<br>Waiters in their black and white,<br>Proper and precise,<br>Gazelles turn together,<br>A troupe of graceful, dancing girls,<br>Synchronized and slender,<br>Performing piles, jumps, and twirls.<br>Poor zebras are the prisoners,<br>Condemned for life, you know,<br>Their classic uniform of stripes,<br>Truly marks them so.<br>If I had all day, I'd surely make,<br>Some other metaphors,<br>For sloths, and tigers, elephants,<br>And even dinosaurs.",
+
+            "The shining peaks of white,<br>The mountains soaring tall,<br>Traversed with scarlet rivers,<br>Multicolored waterfall.<br>Upon the mountains high,<br>Bright and vibrant shoots,<br>Are scattered like the trace,<br>Of tiny fairy fruits.<br>But what is this I see?<br>The mountains are receding,<br>The sugar river flowing swift,<br>Is quickly disappearing.<br>And now there's nothing left,<br>Of the mountains and the stream,<br>Except a trace of pinkish snow,<br>That smells like... ice cream.",
+        ];
+
+        const showInfo = () => {
+            console.log(window.event.target.value);
+            let refToPoemArea = document.querySelector("#poem");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            refToPoemArea.innerHTML = allPoems[index];
+        };
+
+        const videos = [
+            {
+                title: "Metaphor #1",
+                src: "https://www.youtube.com/embed/D3a-Dzx9yts",
+            },
+            {
+                title: "Metaphor #2",
+                src: "https://www.youtube.com/embed/sta9ltUScSA",
+            },
+        ];
+
+        const showVideo = () => {
+            console.log(window.event.target.value);
+            let videoiframe = document.querySelector("#video");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            videoiframe.title = videos[index].title;
+            videoiframe.src = videos[index].src;
+        };
     </script>
 </head>
 
@@ -56,15 +92,33 @@
         </div>
     </nav>
 
-    <section id="home">
-        <div id="homeCard">
-            <div>
-                <img src="assets/Erin Neely.png" alt="Neely">
+    <section id="simile">
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showInfo()" value="1">
+                    Poem #1
+                </button>
+                <button onclick="showInfo()" value="2">
+                    Poem #2
+                </button>
             </div>
-            <div id="text">
-                <p id="question">What is figurative language?</p>
-                <p id="answer">Figurative language is a way to refer to something with meaning, but not literally true.
-                </p>
+            <div id="poem">
+            </div>
+        </div>
+
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showVideo()" value="1">
+                    Video #1
+                </button>
+                <button onclick="showVideo()" value="2">
+                    Video #2
+                </button>
+            </div>
+            <div id="videoHolder">
+                <iframe id="video" width="500px" height="375px" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </section>

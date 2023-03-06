@@ -23,6 +23,44 @@
         function openNav() {
             document.getElementById("verticalNav").style.left = "200px";
         }
+
+        const allPoems = [
+            "The man on my corner<br>pulls petals from rosebuds<br>preparing them perfectly<br>out on the street.<br>He sells them from buckets.<br>My eyes are enchanted.<br>Pink puddles of petals float<br>over his feet.",
+
+            "Betty Botter bought some butter,<br>''But,'' she said, ''the butter's bitter;<br>If I put it in my batter,<br>It will make my batter bitter;<br>But a bit of better butter,<br>That would make my batter better.''<br>So she bought a bit of butter,<br>Better than her bitter butter,<br>And she put it in her batter,<br>And the batter was not bitter;<br>So it was better that Betty Botter<br>Bought a bit of better butter ",
+
+            "I'm standing in the shower<br>and today I have to cope<br>with a slimy slice<br>of skinny-slippery<br>flimsy dripping soap.<br>I try to grip the sudsy strip<br>to scrub my crudsy self<br>and when I'm clean<br>I slide the sliver<br>on a corner shelf.<br>Tomorrow when I shower<br>(I close my eyes and hope)<br>I'll find it's been replaced<br>by a fresher fatter soap."
+        ];
+
+        const showInfo = () => {
+            console.log(window.event.target.value);
+            let refToPoemArea = document.querySelector("#poem");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            refToPoemArea.innerHTML = allPoems[index];
+        };
+
+        const videos = [
+            {
+                title: "Alliteration #1",
+                src: "https://www.youtube.com/embed/UkyIiSN8eKg",
+            },
+            {
+                title: "Alliteration #2",
+                src: "https://www.youtube.com/embed/zVQQlD__HnI",
+            },
+        ];
+
+        const showVideo = () => {
+            console.log(window.event.target.value);
+            let videoiframe = document.querySelector("#video");
+            let index = window.event.target.value;
+            index = parseInt(index) - 1;
+
+            videoiframe.title = videos[index].title;
+            videoiframe.src = videos[index].src;
+        };
     </script>
 </head>
 
@@ -56,15 +94,36 @@
         </div>
     </nav>
 
-    <section id="home">
-        <div id="homeCard">
-            <div>
-                <img src="assets/Erin Neely.png" alt="Neely">
+    <section id="simile">
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showInfo()" value="1">
+                    Poem #1
+                </button>
+                <button onclick="showInfo()" value="2">
+                    Poem #2
+                </button>
+                <button onclick="showInfo()" value="3">
+                    Poem #3
+                </button>
             </div>
-            <div id="text">
-                <p id="question">What is figurative language?</p>
-                <p id="answer">Figurative language is a way to refer to something with meaning, but not literally true.
-                </p>
+            <div id="poem">
+            </div>
+        </div>
+
+        <div>
+            <div id="buttonHolder">
+                <button onclick="showVideo()" value="1">
+                    Video #1
+                </button>
+                <button onclick="showVideo()" value="2">
+                    Video #2
+                </button>
+            </div>
+            <div id="videoHolder">
+                <iframe id="video" width="500px" height="375px" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </section>
